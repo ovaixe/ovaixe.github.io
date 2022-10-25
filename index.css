@@ -33,3 +33,12 @@ a {
     text-decoration: none;
     color: white;
 }
+
+.res {
+    margin-top: 100px;
+}
+
+embed {
+    width: 1200px;
+    height: 1200px;
+}
