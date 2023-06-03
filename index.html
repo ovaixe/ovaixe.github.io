@@ -11,22 +11,30 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap"
       rel="stylesheet"
     />
-    <!-- google icons -->
-    <script
-      src="https://kit.fontawesome.com/495f9bb100.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- icon -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
     <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.7.107/build/pdf.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.7.107/web/pdf_viewer.min.css">
     <title>ovaixe</title>
   </head>
   <body>
     <div class="container">
-        <iframe src="resume.pdf" width="1200px" height="1200px"></iframe>
+      <div id="pdfContainer"></div>
+      <iframe class="res" src="resume.pdf" width="1200px" height="1200px"></iframe>
     </div>
+    
+<!--     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.min.js" integrity="sha512-FbzTWNUXsD1HkMnfODpqj77B8pWe5eG9MaVtaUyZQGe8FaeQg1sNKtwMWk9USkHFu3ub8dg5PSE24s4JJpJQcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.worker.min.js" integrity="sha512-rbVtx+EMuGKVSQEruVomHnv+X9xKJ/zc9seGck0x/0GgLmaWrKcKqnxPUkGFWgCHWBQQ44DkOCSe9DNcwsaJ7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script>
+      const viewerOptions = {
+          showToolbar: false,
+          showSidebar: false
+      };
+
+      const pdfContainer = document.getElementById('pdfContainer');
+      const pdfViewer = PDFViewerApplication;
+      pdfViewer.initialize(viewerOptions, pdfContainer);
+      pdfViewer.open('resume.pdf');
+    </script>
   </body>
 </html>
